@@ -12,8 +12,11 @@ Steps:
     a. using inter_ and the final table, INSERT DISTINCT values where the values are in the inter_
        table and not in the final table
 
-Next steps:
-1. Generalize to take in an entire arbitrary object. Each url has the pattern
+Maybe future steps:
+@TODO
+1. Move request to class with req arg `object` (people, planet, film, etc) and method to pull by
+   attribute (id, name, age, whatever. can be instantiated using optional arg of id)
+2. Generalize to take in an entire arbitrary object. Each url has the pattern
    "swapi.co/api/{object}/{id}/"
     a. Create dim_ and inter_dim_ tables for each object
     b. Expand all dim_ and inter_dim_ tables to include traits with non-list values like metrics

@@ -36,4 +36,7 @@ Red Hat Technical Assessment - Star Wars API
 5. After you're satisfied with your tables, export them for later.
 6. Run `task_one.py` using your python interpreter (assuming you've installed the requirements, mysql-connector)
     a. `~>python.exe task_one.py`
-7. Run `task_two.py` using your python interpreter (assuming you've installed the requirements, requests)
+7. (OPTIONAL) run `schema_scrape` to get `.schemas`, a file that outlines some of the major object schemas
+8. Run `task_two.py` using your python interpreter (assuming you've installed the requirements, requests)
+   a. `task_two.py` writes the result to `ANewHopeDetail.json` and prints the output into the console.
+   b. Note: Meters and Centimeters are converted to feet, kilograms are converted to pounds.
