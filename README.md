@@ -4,9 +4,9 @@ Red Hat Technical Assessment - Star Wars API
 ### Notes<hr>
 * This assessment was completed using 64x Windows 10, so all directions will be more detailed for windows users. The consolation prize for non-Windows users is a prize in itself.
 * We're doing this insecurely. If you have time, and if you want to extend this set of test responses, I recommend taking a few more secure steps
+* Since I'm on a roll admitting embarrassing facts, I'll go ahead and admit that I'm using Windows Command Line for this. Use your CLI of choice.
 * ~/ from here on out will be whatever directory you're using to host everything you need. In my case, it's C:\Users\Pclarke\Desktop\misc\
-* Since I'm already in a dark, sad hole, I'll go ahead and admit that I'm using Windows Command Line.
-* We're using python 3. Install it wherever. I've added it to PATH, so I just need to run `python.exe [script]`, but if you haven't done/can't do this, replace `python.exe` with the full path pointing towards the `python.exe` you wish to use.
+* We're using python 3. Install it wherever. I've added it to my PATH variable, so I just need to run `python.exe [script]`, but if you haven't done/can't do this, replace `python.exe` with the full path pointing towards the `python.exe` you wish to use.
 
 ### Steps<hr>
 1. Download and install MySQL: https://dev.mysql.com/downloads/mysql/
@@ -32,4 +32,8 @@ Red Hat Technical Assessment - Star Wars API
     b. NOTES:
         i. the statements that create `dim_character`, `dim_film`, and `fact_appearance` are all idempotent. This script can be run as many times as you want and there should only be one row per film, character, and film/character combo in each table, respectively.
         ii. `inter_*` tables are not due to assessment constraints (`CREATE` `INSERT` `SELECT`)
+    c. run `~/mysql-8.0.15-win64x> bin\mysqldump -u root -p mysql --no-data > ../db.sql` to dump schema information into your folder.
 5. After you're satisfied with your tables, export them for later.
+6. Run `task_one.py` using your python interpreter (assuming you've installed the requirements, mysql-connector)
+    a. `~>python.exe task_one.py`
+7. Run `task_two.py` using your python interpreter (assuming you've installed the requirements, requests)
