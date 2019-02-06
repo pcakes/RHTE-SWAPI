@@ -2,7 +2,7 @@
 Red Hat Technical Assessment - Star Wars API
 
 ### Requirements<hr>
-* Py3.6+ - recommended to add pythong to `PATH` if using Windows (this assessment was shamefully completed using Win10 64x on Command Prompt)
+* Py3.6+ - recommended to add python to `PATH` if using Windows (this assessment was shamefully completed using Win10 64x on Command Prompt)
 ** mysql-connector
 ** requests
 ** `python -m pip install mysql-connector requests`
