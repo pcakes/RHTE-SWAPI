@@ -18,7 +18,7 @@ Red Hat Technical Assessment - Star Wars API
 1. Download and install MySQL: https://dev.mysql.com/downloads/mysql/
     - https://dev.mysql.com/downloads/file/?id=484900 for the direct download link. Below the big, basically adware, buttons is a "No thanks, just start my downloads" link. Click that.
     - The above link downloads something called a `noinstall` ZIP Archive. Drop the zip file wherever and then extract it into the desired location (f. ex. `~/`).
-     - NOTE: I do not know if spaces in the destination path matter, but I've had issues with that in the past, because, you know, Windows, so I am putting it somewhere where there are no spaces in the target directory.
+      - NOTE: I do not know if spaces in the destination path matter, but I've had issues with that in the past, because, you know, Windows, so I am putting it somewhere where there are no spaces in the target directory.
     - At this point my directory has two sub-folders: RHTE-SWAPI and mysql-8.0.15-winx64
     - Navigate to the MySQL directory (`~/mysql-8.0.15-win64x`) in your CLI of choice and run the command `~/mysql-8.0.15-win64x> bin\mysqld --initialize-insecure --console`. A bunch of stuff will print out and then you'll be able to continue.
      - security note: this creates the root user without a password
@@ -38,8 +38,8 @@ Red Hat Technical Assessment - Star Wars API
 4. Run the file using your python interpreter (assuming you've installed the requirements, mysql-connector and requests):
     - `~/>python.exe table_gen.py` if you're in the same directory
     - NOTES:
-     - the statements that create `dim_character`, `dim_film`, and `fact_appearance` are all idempotent. This script can be run as many times as you want and there should only be one row per film, character, and film/character combo in each table, respectively.
-     - `inter_*` tables are not due to assessment constraints (`CREATE` `INSERT` `SELECT`)
+      - the statements that create `dim_character`, `dim_film`, and `fact_appearance` are all idempotent. This script can be run as many times as you want and there should only be one row per film, character, and film/character combo in each table, respectively.
+      - `inter_*` tables are not due to assessment constraints (`CREATE` `INSERT` `SELECT`)
     - run `~/mysql-8.0.15-win64x> bin\mysqldump -u root -p mysql --no-data > ../db.sql` to dump schema information into your folder.
 5. After you're satisfied with your tables, export them for later.
 6. Run `task_one.py` using your python interpreter (assuming you've installed the requirements, mysql-connector)
