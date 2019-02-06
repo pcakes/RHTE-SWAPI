@@ -50,17 +50,25 @@ JOIN
   dim_film f
   ON f.id = fa.film_id
 """
+
+# Get results
 cursor.execute(sql)
+
 data = [k for k in cursor]
+# create a list of dictionaries where keys are "film" and "character" and elements to those keys
+# are the film name and the characters that appear in the film, respectively.
 result = [{"film": k, "character": [e[1] for e in data if e[0] == k]}
           for k in set(i[0] for i in data)]
+# Technically what was asked for: "like"
 print('Ugly result (something "like" what was shown):\n', result)
 
+# Closer result, using pretty print
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 print('\nslightly prettier:')
 pp.pprint(result)
 
+# I'm not sure why I did this, but here it is.
 s = "["
 fs = '\n    "film": {f},\n'
 cs = '    "character":\n    [\n      "{c}"\n    ]\n  '
