@@ -109,3 +109,7 @@ pp.pprint(film)
 now = time.strftime('%Y%m%d%H%M')
 with open('{}_{}_detail_{}.json'.format(film_id, film['title'], now), 'w') as f:
   json.dump(film, f)
+
+# Sometimes you just gotta follow the directions
+with open('task_two.json'.format(film_id, film['title'], now), 'w') as f:
+  json.dump(film, f)
