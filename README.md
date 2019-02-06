@@ -15,7 +15,8 @@ Red Hat Technical Assessment - Star Wars API
         i. NOTE: I do not know if spaces in the destination path matter, but I've had issues with that in the past, because, you know, Windows, so I am putting it somewhere where there are no spaces in the target directory.
     c. At this point my directory has two sub-folders: RHTE-SWAPI and mysql-8.0.15-winx64
     d. Navigate to the MySQL directory (~/mysql-8.0.15-win64x) in your CLI of choice and run the command `~/mysql-8.0.15-win64x> bin\mysqld --initialize-insecure --console`
-    e. run `~/mysql-8.0.15-win64x> bin\mysqld --console` to spin up the server. This should create a mysql server instance running LocalHost:[some port, probably 3306]
+        i. security note: this creates the root user without a password, so do with that information what you will
+    e. run `~/mysql-8.0.15-win64x> bin\mysqld --console` to spin up the server. This should create a mysql server instance running LocalHost:[some port, probably 3306]. This also locks up the CLI that you used to spin it up, so open another one.
     f. Open another console, navigate to the mysql server directory, and run the command `~/mysql-8.0.15-win64x>bin\mysql -u root --skip-password`
     g. Run the command `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<yourpasswordhere>'`
     h. Leave the server spinning. We're about to use it.
@@ -36,7 +37,8 @@ Red Hat Technical Assessment - Star Wars API
 5. After you're satisfied with your tables, export them for later.
 6. Run `task_one.py` using your python interpreter (assuming you've installed the requirements, mysql-connector)
     a. `~>python.exe task_one.py`
-7. (OPTIONAL) run `schema_scrape` to get `.schemas`, a file that outlines some of the major object schemas
+    b. This should print out three different printouts: one that just prints out the resulting dictionary, one that pprints the resulting dictionary, and then one that's formatted using a for loop and string formatting.
+7. (OPTIONAL - Task 1.5) run `schema_scrape` to get `.schemas`, a file that outlines some of the major object schemas
 8. Run `task_two.py` using your python interpreter (assuming you've installed the requirements, requests)
-   a. `task_two.py` writes the result to `ANewHopeDetail.json` and prints the output into the console.
+   a. `task_two.py` writes the result to `ANewHopeDetail.json` and prints the output into the console using pprint.
    b. Note: Meters and Centimeters are converted to feet, kilograms are converted to pounds.
